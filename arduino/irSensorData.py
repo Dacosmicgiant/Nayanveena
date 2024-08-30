@@ -137,7 +137,7 @@ import time
 import matplotlib.pyplot as plt
 
 # Set up the serial connection
-ser = serial.Serial('COM3', 9600)  # Replace 'COM3' with your Arduino's COM port
+ser = serial.Serial('COM4', 57600)  # Replace 'COM3' with your Arduino's COM port
 
 # Create a DataFrame to store the data
 data = []
@@ -167,7 +167,7 @@ try:
                 print(f"Line does not contain a comma: '{line}'")
 
         # Optional: Sleep for a short period to reduce CPU usage
-        time.sleep(0.01)
+        # time.sleep(0.01)
 
 except KeyboardInterrupt:
     # Handle stopping the script with Ctrl+C
@@ -189,6 +189,7 @@ finally:
     plt.title("Sensor Data Over Time")
     plt.xlabel("Time (ms)")
     plt.ylabel("Sensor Value")
+    plt.ylim(max(df["Sensor Value"])-10, max(df["Sensor Value"])+5)  # Set y-axis to start from 300
     plt.grid(True)
     plt.savefig("sensor_data_plot.png")  # Save the plot as a PNG file
     plt.show()  # Display the plot
