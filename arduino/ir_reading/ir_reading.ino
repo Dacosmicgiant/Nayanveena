@@ -1,3 +1,4 @@
+// old code
 // int ObstaclePin = A2;     // Analog pin where the sensor is connected
 // int onIR = 7;             // Digital pin to control the IR sensor power
 // int ReadObstacle = 0;     // Variable to store the analog reading
